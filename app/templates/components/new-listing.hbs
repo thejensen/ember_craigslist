@@ -1,1 +1,46 @@
-{{yield}}
+<h1>New Listing</h1>
+<div class="ui form">
+  <form>
+
+    <div class="field">
+      <label for="title">Title</label>
+      {{input value=title }}
+    </div>
+
+    <div class="field">
+      <label for="content">Item Description</label>
+      {{textarea value=content }}
+    </div>
+
+    <div class="field">
+      <label for="price">Item Price</label>
+      {{input value=price}}
+    </div>
+
+    <div class="field">
+      <label for="seller">Seller Name</label>
+      {{input value=seller}}
+    </div>
+
+    <div class="field">
+      <label for="email">Seller Email</label>
+      {{input value=email}}
+    </div>
+
+    <div class="field">
+      <label for="image">Image URL</label>
+      {{input value=image}}
+    </div>
+
+    <div class="field">
+      <!-- Code from: http://balinterdi.com/2015/08/29/how-to-do-a-select-dropdown-in-ember-20.html -->
+      <select onchange={{action (mut category) value="target.value"}}>
+      {{#each model as |categoryChoice|}}
+        <option value={{categoryChoice.id}} selected={{eq category categoryChoice}}>{{categoryChoice.id}}</option>
+      {{/each}}
+      </select>
+    </div>
+
+    <button class="black ui button tiny" {{action 'saveListing' model}}>Save Listing</button>
+  </form>
+</div>

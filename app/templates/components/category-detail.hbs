@@ -1,0 +1,18 @@
+<h2> Listings tagged with ({{category.name}}): </h2>
+<div class="ui segments">
+  {{#if category.listings}}
+    {{#each sortedListings as |listing|}}
+      <div class="ui segment secondary">
+        {{#link-to 'listing' listing.id}}
+          <div class="col-sm-6 tag-text">
+            <h3>{{listing-date-format listing.date}} - {{listing.title}} - ${{listing.price}}</h3>
+          </div>
+        {{/link-to}}
+      </div>
+    {{/each}}
+  {{else}}
+    <div class="ui segment answer">
+      <h2>No Listings in this Category ({{#link-to 'newlisting'}}Add New Listing{{/link-to}})</h2>
+    </div>
+  {{/if}}
+</div>

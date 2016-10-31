@@ -1,1 +1,4 @@
-{{outlet}}
+<h1>{{model.title}}, ${{model.price}}</h1>
+<h3>posted: {{listing-date-format model.date}} by {{model.seller}} <br> email: {{model.email}}</h3>
+<img src={{model.image}} alt={{model.title}}/>
+<p>{{model.content}}</p>

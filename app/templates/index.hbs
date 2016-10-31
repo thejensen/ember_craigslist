@@ -1,1 +1,18 @@
-{{outlet}}
+<h2> Category Listing </h2>
+<div class="ui segments">
+  {{#if model}}
+    {{#each model as |category|}}
+      <div class="ui segment secondary">
+        {{#link-to 'category' category.id}}
+          <div class="col-sm-6 tag-text">
+            <h3>{{category.id}}</h3>
+          </div>
+        {{/link-to}}
+      </div>
+    {{/each}}
+  {{else}}
+    <div class="ui segment answer">
+      <h2>No Categories Created Yet</h2>
+    </div>
+  {{/if}}
+</div>
